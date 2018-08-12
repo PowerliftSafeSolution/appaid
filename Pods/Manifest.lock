@@ -1,0 +1,24 @@
+PODS:
+  - DropDown (2.3.2)
+  - FileBrowser (1.0.0)
+  - M13Checkbox (3.2.2)
+
+DEPENDENCIES:
+  - DropDown
+  - FileBrowser (~> 1.0)
+  - M13Checkbox
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - DropDown
+    - FileBrowser
+    - M13Checkbox
+
+SPEC CHECKSUMS:
+  DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
+  FileBrowser: 2ca91ff61c9ea09665eb3b8f9e64a7a77e66a0bf
+  M13Checkbox: a8c2491cfbbca10797925fd0b9154a782bf40d89
+
+PODFILE CHECKSUM: 2b091401481e23aad5defb5ca86f7b0f9653b2f9
+
+COCOAPODS: 1.5.3
