@@ -8,18 +8,64 @@
 
 import UIKit
 import Charts
+import DropDown
 
 class OverAllTypeViewController: UIViewController {
     
-    @IBOutlet weak var barView: BarChartView!;
-    var months: [String]!;
+    @IBOutlet weak var chart: PieChartView!
+    @IBOutlet weak var chooseYearButton: UIButton!
+    
+    let chooseYearDropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        chooseYearButton.layer.borderWidth = 1
+        chooseYearButton.layer.borderColor = UIColor.black.cgColor
         
-        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        let numberInjuries = [2.0, 1.0 , 0.0, 3.0, 0.0, 0.0, 0.0, 4.0, 0.0, 0.0, 0.0, 1.0, 1.0]
-        setChart(dataPoints: months, values: numberInjuries);
+        
+        let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        myActivityIndicator.center = view.center
+        
+        myActivityIndicator.hidesWhenStopped = false
+        
+        myActivityIndicator.startAnimating()
+        
+        view.addSubview(myActivityIndicator)
+        let myUrl = URL(string: "http://ec2-54-71-121-51.us-west-2.compute.amazonaws.com:8080/appaid-ws/api/stat/year")
+        var request = URLRequest(url:myUrl!)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response:URLResponse?, error: Error?) in
+            
+            if error != nil{
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            do{
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                if let parseJSON = json {
+                    if let years = parseJSON["years"] as? [Int]{
+                        let stringarray = years.map{String($0)}
+                        DispatchQueue.main.async {
+                            self.chooseYearDropDown.dataSource = stringarray
+                            self.chooseYearDropDown.selectionAction = {[weak self] (index, item) in self?.chooseYearButton.setTitle(item, for: .normal)}
+                            self.chooseYearDropDown.anchorView = self.chooseYearButton
+                        }
+                    }else{
+                        print("something went wrong")
+                    }
+                }
+            }catch{
+                self.removeActivityIndicator(activityIndicator: myActivityIndicator)
+                print(error)
+            }
+            
+            
+            self.removeActivityIndicator(activityIndicator: myActivityIndicator)
+        }
+        task.resume()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,25 +83,79 @@ class OverAllTypeViewController: UIViewController {
         appDelegate?.window??.rootViewController = homePage
     }
     
+    @IBAction func submitButtonTapped(_ sender: Any) {
+        if let year = chooseYearButton.titleLabel?.text{
+            if let intYear = Int(year){
+        
+                let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+                myActivityIndicator.center = view.center
+                
+                myActivityIndicator.hidesWhenStopped = false
+                
+                myActivityIndicator.startAnimating()
+                
+                view.addSubview(myActivityIndicator)
+                let myUrl = URL(string: "http://ec2-54-71-121-51.us-west-2.compute.amazonaws.com:8080/appaid-ws/api/stat/type?year=\(intYear)")
+                var request = URLRequest(url:myUrl!)
+                request.httpMethod = "GET"
+                request.addValue("application/json", forHTTPHeaderField: "Accept")
 
-    
-    
-    
-    func setChart(dataPoints: [String], values: [Double]){
-        var dataEntries: [BarChartDataEntry] = [];
-        
-        for i in 0..<dataPoints.count {
-            let dataEntry = BarChartDataEntry(x: Double(i), y: values[i])
-            dataEntries.append(dataEntry)
+                let task = URLSession.shared.dataTask(with: request) { (data: Data?, response:URLResponse?, error: Error?) in
+                    
+                    if error != nil{
+                        print("error=\(String(describing: error))")
+                        return
+                    }
+                    
+                    do{
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                        if let parseJSON = json {
+                            if let values = parseJSON["values"] as? [Int]{
+                                let doubleValues = values.map{Double($0)}
+                                if let keys = parseJSON["keys"] as? [String]{
+                                    self.setChart(dataPoints: keys, values: doubleValues)
+                                }
+                            }
+                        }
+                    }catch{
+                        self.removeActivityIndicator(activityIndicator: myActivityIndicator)
+                        print(error)
+                    }
+                    
+                    
+                    self.removeActivityIndicator(activityIndicator: myActivityIndicator)
+                }
+                task.resume()
+            }
         }
-        
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Number of injuries");
-        let chartData = BarChartData(dataSet: chartDataSet);
-        
-        barView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dataPoints);
-        barView.xAxis.granularity = 1;
-        barView.data = chartData;
-        
+    }
+    
+    @IBAction func yearSelectionButtonTapped(_ sender: Any) {
+        chooseYearDropDown.show()
+    }
+    
+    func removeActivityIndicator(activityIndicator: UIActivityIndicatorView){
+        DispatchQueue.main.async {
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
+        }
+    }
+    func setChart(dataPoints: [String], values: [Double]){
+        DispatchQueue.main.async {
+            var dataEntries: [PieChartDataEntry] = []
+            
+            for i in 0..<dataPoints.count{
+                let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i])
+                dataEntries.append(dataEntry)
+            }
+            let chartDataSet = PieChartDataSet(values: dataEntries, label: nil)
+            let chartData = PieChartData(dataSet: chartDataSet)
+            
+            let colors = [UIColor.blue, UIColor.red, UIColor.green]
+            chartDataSet.colors = colors as! [NSUIColor]
+            
+            self.chart.data = chartData
+        }
     }
 
     
