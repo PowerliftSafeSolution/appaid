@@ -1,5 +1,5 @@
 //
-//  LowerBodyInjuryViewController.swift
+//  HeadInjuryViewController.swift
 //  AppAid
 //
 //  Created by Mac on 2018-04-08.
@@ -9,18 +9,16 @@
 import UIKit
 import Charts
 
-class LowerBodyInjuryViewController: UIViewController {
+class InjuryViewController: UIViewController {
 
     @IBOutlet weak var barView: BarChartView!;
     var months: [String]!;
-    
-    weak var axisFormatDelegate: IAxisValueFormatter?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        let numberInjuries = [5.0, 1.0 , 10.0, 3.0, 7.0, 8.0, 9.0, 4.0, 2.0, 5.0, 10.0, 1.0, 1.0]
+        let numberInjuries = [2.0, 1.0 , 5.0, 3.0, 10.0, 2.0, 3.0, 4.0, 1.0, 5.0, 2.0, 1.0, 1.0]
         setChart(dataPoints: months, values: numberInjuries);
     }
     
@@ -28,6 +26,17 @@ class LowerBodyInjuryViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func homeButtonTapped(_ sender: Any) {
+        let homePage = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate?.window??.rootViewController = homePage
+    }
+    
     
     func setChart(dataPoints: [String], values: [Double]){
         var dataEntries: [BarChartDataEntry] = [];
@@ -56,4 +65,5 @@ class LowerBodyInjuryViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+
 }

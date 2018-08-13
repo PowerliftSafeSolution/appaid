@@ -9,7 +9,7 @@
 import UIKit
 import Charts
 
-class ChestInjuryViewController: UIViewController {
+class ForkliftOperatorNameViewController: UIViewController {
 
     @IBOutlet weak var barView: BarChartView!;
     var months: [String]!;
@@ -26,6 +26,16 @@ class ChestInjuryViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func homeButtonTapped(_ sender: Any) {
+        let homePage = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate?.window??.rootViewController = homePage
+    }
+    
     
     func setChart(dataPoints: [String], values: [Double]){
         var dataEntries: [BarChartDataEntry] = [];

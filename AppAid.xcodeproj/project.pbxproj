@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		0405BA4A207B29460084F3B4 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F77BF4207B084200F70E52 /* Charts.framework */; };
 		0405BA4B207B29460084F3B4 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F77BF4207B084200F70E52 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0405BA50207B38820084F3B4 /* ArmInjuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BA4F207B38820084F3B4 /* ArmInjuryViewController.swift */; };
-		0405BA52207B389E0084F3B4 /* LowerBodyInjuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BA51207B389E0084F3B4 /* LowerBodyInjuryViewController.swift */; };
-		0405BA54207B38AC0084F3B4 /* HeadInjuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BA53207B38AC0084F3B4 /* HeadInjuryViewController.swift */; };
-		0405BA56207B38C40084F3B4 /* ChestInjuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BA55207B38C40084F3B4 /* ChestInjuryViewController.swift */; };
+		0405BA50207B38820084F3B4 /* ForkliftOperatorIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BA4F207B38820084F3B4 /* ForkliftOperatorIdViewController.swift */; };
+		0405BA52207B389E0084F3B4 /* NearMissViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BA51207B389E0084F3B4 /* NearMissViewController.swift */; };
+		0405BA54207B38AC0084F3B4 /* InjuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BA53207B38AC0084F3B4 /* InjuryViewController.swift */; };
+		0405BA56207B38C40084F3B4 /* ForkliftOperatorNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0405BA55207B38C40084F3B4 /* ForkliftOperatorNameViewController.swift */; };
 		04F77BED207B080600F70E52 /* Charts-master in Resources */ = {isa = PBXBuildFile; fileRef = 04F77BEC207B080600F70E52 /* Charts-master */; };
-		04F77C08207B1A3500F70E52 /* ForkliftInjuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F77C07207B1A3500F70E52 /* ForkliftInjuryViewController.swift */; };
+		04F77C08207B1A3500F70E52 /* OverAllTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F77C07207B1A3500F70E52 /* OverAllTypeViewController.swift */; };
 		3007DA8920FA843300960431 /* Aguidetoforkliftoperatortraining.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3007DA8820FA843300960431 /* Aguidetoforkliftoperatortraining.pdf */; };
 		3007DA8B20FA844800960431 /* 725 Forklift Training.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3007DA8A20FA844800960431 /* 725 Forklift Training.pdf */; };
 		307A265720F964A1009AC484 /* OperatorHandbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A265620F964A1009AC484 /* OperatorHandbookViewController.swift */; };
@@ -90,13 +90,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0405BA4F207B38820084F3B4 /* ArmInjuryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmInjuryViewController.swift; sourceTree = "<group>"; };
-		0405BA51207B389E0084F3B4 /* LowerBodyInjuryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerBodyInjuryViewController.swift; sourceTree = "<group>"; };
-		0405BA53207B38AC0084F3B4 /* HeadInjuryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadInjuryViewController.swift; sourceTree = "<group>"; };
-		0405BA55207B38C40084F3B4 /* ChestInjuryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestInjuryViewController.swift; sourceTree = "<group>"; };
+		0405BA4F207B38820084F3B4 /* ForkliftOperatorIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkliftOperatorIdViewController.swift; sourceTree = "<group>"; };
+		0405BA51207B389E0084F3B4 /* NearMissViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMissViewController.swift; sourceTree = "<group>"; };
+		0405BA53207B38AC0084F3B4 /* InjuryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjuryViewController.swift; sourceTree = "<group>"; };
+		0405BA55207B38C40084F3B4 /* ForkliftOperatorNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkliftOperatorNameViewController.swift; sourceTree = "<group>"; };
 		04F77BEC207B080600F70E52 /* Charts-master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Charts-master"; sourceTree = "<group>"; };
 		04F77BEE207B084200F70E52 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		04F77C07207B1A3500F70E52 /* ForkliftInjuryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkliftInjuryViewController.swift; sourceTree = "<group>"; };
+		04F77C07207B1A3500F70E52 /* OverAllTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverAllTypeViewController.swift; sourceTree = "<group>"; };
 		2EA8A79787E59DD1234B7374 /* Pods-AppAid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppAid.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppAid/Pods-AppAid.release.xcconfig"; sourceTree = "<group>"; };
 		2ED023F87FCF185CC88F3AB2 /* Pods-AppAidUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppAidUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppAidUITests/Pods-AppAidUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3007DA8820FA843300960431 /* Aguidetoforkliftoperatortraining.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Aguidetoforkliftoperatortraining.pdf; path = AppAid/Aguidetoforkliftoperatortraining.pdf; sourceTree = SOURCE_ROOT; };
@@ -207,11 +207,11 @@
 				3D159D5B211E7E6900427B05 /* SelectUploadViewController.swift */,
 				307A265620F964A1009AC484 /* OperatorHandbookViewController.swift */,
 				04F77BEE207B084200F70E52 /* Charts.xcodeproj */,
-				04F77C07207B1A3500F70E52 /* ForkliftInjuryViewController.swift */,
-				0405BA51207B389E0084F3B4 /* LowerBodyInjuryViewController.swift */,
-				0405BA53207B38AC0084F3B4 /* HeadInjuryViewController.swift */,
-				0405BA55207B38C40084F3B4 /* ChestInjuryViewController.swift */,
-				0405BA4F207B38820084F3B4 /* ArmInjuryViewController.swift */,
+				04F77C07207B1A3500F70E52 /* OverAllTypeViewController.swift */,
+				0405BA51207B389E0084F3B4 /* NearMissViewController.swift */,
+				0405BA53207B38AC0084F3B4 /* InjuryViewController.swift */,
+				0405BA55207B38C40084F3B4 /* ForkliftOperatorNameViewController.swift */,
+				0405BA4F207B38820084F3B4 /* ForkliftOperatorIdViewController.swift */,
 				309E0F38207424300008C76B /* Main.storyboard */,
 				309E0F3B207424300008C76B /* Assets.xcassets */,
 				309E0F3D207424300008C76B /* LaunchScreen.storyboard */,
@@ -516,19 +516,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0405BA50207B38820084F3B4 /* ArmInjuryViewController.swift in Sources */,
+				0405BA50207B38820084F3B4 /* ForkliftOperatorIdViewController.swift in Sources */,
 				309711F9207599EE00436570 /* LoginViewController.swift in Sources */,
-				0405BA52207B389E0084F3B4 /* LowerBodyInjuryViewController.swift in Sources */,
+				0405BA52207B389E0084F3B4 /* NearMissViewController.swift in Sources */,
 				3DF62CF821213C9200840FA6 /* ForkliftTrainingViewController.swift in Sources */,
 				3D16FB7D21007CD2004CD32B /* IncidentReportResult.swift in Sources */,
 				3D16FB76210050C5004CD32B /* IncidentReportViewController.swift in Sources */,
 				3D159D5C211E7E6900427B05 /* SelectUploadViewController.swift in Sources */,
-				0405BA54207B38AC0084F3B4 /* HeadInjuryViewController.swift in Sources */,
+				0405BA54207B38AC0084F3B4 /* InjuryViewController.swift in Sources */,
 				3DF62CF42120CB6900840FA6 /* IncidentReportMainViewController.swift in Sources */,
 				3DF62CFA21213CDE00840FA6 /* IncidentStatisticViewController.swift in Sources */,
 				3D159D64211EA07700427B05 /* AppDelegate.swift in Sources */,
-				0405BA56207B38C40084F3B4 /* ChestInjuryViewController.swift in Sources */,
-				04F77C08207B1A3500F70E52 /* ForkliftInjuryViewController.swift in Sources */,
+				0405BA56207B38C40084F3B4 /* ForkliftOperatorNameViewController.swift in Sources */,
+				04F77C08207B1A3500F70E52 /* OverAllTypeViewController.swift in Sources */,
 				3D03DF4A211FA85600B91906 /* HomeViewController.swift in Sources */,
 				307A265720F964A1009AC484 /* OperatorHandbookViewController.swift in Sources */,
 			);
