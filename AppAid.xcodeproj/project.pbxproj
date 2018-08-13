@@ -29,6 +29,9 @@
 		3D159D64211EA07700427B05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D159D63211EA07700427B05 /* AppDelegate.swift */; };
 		3D16FB76210050C5004CD32B /* IncidentReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D16FB75210050C5004CD32B /* IncidentReportViewController.swift */; };
 		3D16FB7D21007CD2004CD32B /* IncidentReportResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D16FB7C21007CD2004CD32B /* IncidentReportResult.swift */; };
+		3DF62CF42120CB6900840FA6 /* IncidentReportMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF62CF32120CB6900840FA6 /* IncidentReportMainViewController.swift */; };
+		3DF62CF821213C9200840FA6 /* ForkliftTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF62CF721213C9200840FA6 /* ForkliftTrainingViewController.swift */; };
+		3DF62CFA21213CDE00840FA6 /* IncidentStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF62CF921213CDE00840FA6 /* IncidentStatisticViewController.swift */; };
 		7B934E56AF02711FFE5C0FFF /* Pods_AppAidTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE76B1B910067F83BD72EE1 /* Pods_AppAidTests.framework */; };
 		9DDB2F17F19E541A63BC1638 /* Pods_AppAid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DC8E17D33F5C0FC02896FF /* Pods_AppAid.framework */; };
 		BE7DC71725D01C402D5E1EBE /* Pods_AppAidUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B991EA8FF1268779A4A1BDE /* Pods_AppAidUITests.framework */; };
@@ -118,6 +121,9 @@
 		3D159D63211EA07700427B05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D16FB75210050C5004CD32B /* IncidentReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentReportViewController.swift; sourceTree = "<group>"; };
 		3D16FB7C21007CD2004CD32B /* IncidentReportResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentReportResult.swift; sourceTree = "<group>"; };
+		3DF62CF32120CB6900840FA6 /* IncidentReportMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentReportMainViewController.swift; sourceTree = "<group>"; };
+		3DF62CF721213C9200840FA6 /* ForkliftTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForkliftTrainingViewController.swift; sourceTree = "<group>"; };
+		3DF62CF921213CDE00840FA6 /* IncidentStatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentStatisticViewController.swift; sourceTree = "<group>"; };
 		494812D0BE11A158B5EEE25E /* Pods-AppAid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppAid.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppAid/Pods-AppAid.debug.xcconfig"; sourceTree = "<group>"; };
 		89DC8E17D33F5C0FC02896FF /* Pods_AppAid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppAid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDFE0C2337393EEE0C833D6 /* Pods-AppAidTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppAidTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppAidTests/Pods-AppAidTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +220,9 @@
 				309711F8207599EE00436570 /* LoginViewController.swift */,
 				3D16FB7C21007CD2004CD32B /* IncidentReportResult.swift */,
 				3D03DF49211FA85600B91906 /* HomeViewController.swift */,
+				3DF62CF32120CB6900840FA6 /* IncidentReportMainViewController.swift */,
+				3DF62CF721213C9200840FA6 /* ForkliftTrainingViewController.swift */,
+				3DF62CF921213CDE00840FA6 /* IncidentStatisticViewController.swift */,
 				309711FC2075A72E00436570 /* Supporting Files */,
 				309E0F48207424300008C76B /* AppAidTests */,
 			);
@@ -510,10 +519,13 @@
 				0405BA50207B38820084F3B4 /* ArmInjuryViewController.swift in Sources */,
 				309711F9207599EE00436570 /* LoginViewController.swift in Sources */,
 				0405BA52207B389E0084F3B4 /* LowerBodyInjuryViewController.swift in Sources */,
+				3DF62CF821213C9200840FA6 /* ForkliftTrainingViewController.swift in Sources */,
 				3D16FB7D21007CD2004CD32B /* IncidentReportResult.swift in Sources */,
 				3D16FB76210050C5004CD32B /* IncidentReportViewController.swift in Sources */,
 				3D159D5C211E7E6900427B05 /* SelectUploadViewController.swift in Sources */,
 				0405BA54207B38AC0084F3B4 /* HeadInjuryViewController.swift in Sources */,
+				3DF62CF42120CB6900840FA6 /* IncidentReportMainViewController.swift in Sources */,
+				3DF62CFA21213CDE00840FA6 /* IncidentStatisticViewController.swift in Sources */,
 				3D159D64211EA07700427B05 /* AppDelegate.swift in Sources */,
 				0405BA56207B38C40084F3B4 /* ChestInjuryViewController.swift in Sources */,
 				04F77C08207B1A3500F70E52 /* ForkliftInjuryViewController.swift in Sources */,

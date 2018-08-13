@@ -2,7 +2,7 @@
 //  IncidentReportMainViewController.swift
 //  AppAid
 //
-//  Created by wenhao on 2018-08-09.
+//  Created by wenhao on 2018-08-12.
 //  Copyright © 2018 Layomi Dele-Dare. All rights reserved.
 //
 
@@ -21,14 +21,15 @@ class IncidentReportMainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func homeButtonTapped(_ sender: Any) {
+        let homePage = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate?.window??.rootViewController = homePage
     }
-    */
-
+    
+    @IBAction func reportAnIncidentButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "IncidentReportVC")
+        self.present(controller, animated: true, completion: nil)    }
+    
 }

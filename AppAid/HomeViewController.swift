@@ -28,6 +28,26 @@ class HomeViewController: UIViewController {
         appDelegate?.window??.rootViewController = loginPage    }
     
     @IBAction func incidentReportButtonTapped(_ sender: Any) {
+        
+        let incidentPage = self.storyboard?.instantiateViewController(withIdentifier: "IncidentReportMainVC") as! IncidentReportMainViewController
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate?.window??.rootViewController = incidentPage
     }
+    
+    @IBAction func forkliftTrainingButtonTapped(_ sender: Any) {
+        
+        let trainingPage = self.storyboard?.instantiateViewController(withIdentifier: "ForkliftTrainingVC") as! ForkliftTrainingViewController
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate?.window??.rootViewController = trainingPage
+        
+    }
+    
+    @IBAction func incidentStatisticsButtonTapped(_ sender: Any) {
+        
+        let statPage = self.storyboard?.instantiateViewController(withIdentifier: "IncidentStatisticsVC") as! IncidentStatisticViewController
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate?.window??.rootViewController = statPage
+    }
+    
     
 }
